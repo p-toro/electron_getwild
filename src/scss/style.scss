@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap&text=0123456789");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway", "Noto Sans JP", sans-serif;
+}
+
+.bg {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background-image: radial-gradient(#333 28%, transparent 35%), radial-gradient(#333 28%, transparent 35%);
+    background-position: 0 0, 4px 4px;
+    background-size: 4px 4px;
+
+    backdrop-filter: blur(5px) contrast(5) sepia(0.6);
+  }
+}
+
+#js-ytplayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  position: absolute;
+  z-index: 2;
+  top: 38%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+
+.main_ttl {
+  white-space: nowrap;
+  text-indent: -1em;
+  letter-spacing: 0.2em;
+  color: #fff;
+  text-shadow: 0px 0px 10px #000;
+  font-size: 3em;
+}
+
+.main_subTtl {
+  margin-top: 0.3em;
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-shadow: 0px 0px 10px #000;
+}
+
+.main_innerWrap {
+  display: flex;
+  margin-top: 2em;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.8);
+
+  align-items: center;
+  justify-content: center;
+}
+
+.main_currentTime {
+  font-family: "Roboto", sans-serif;
+  font-size: 3em;
+}
+
+.main_inputTime {
+  margin-top: 2em;
+  padding: 0.1em 0.6em;
+  cursor: pointer;
+  transform: scale(2);
+  font-family: "Roboto", sans-serif;
+}

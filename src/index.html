@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Get Wild 退勤</title>
+  <script>
+    // apiでの埋め込みじゃないと音量設定ができないため
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    let player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player(
+        'js-ytplayer',
+        {
+          videoId: 'NHKq8IOXPxA',
+          playerVars: {
+            loop: 0,
+            controls: 0,
+            autoplay: 0,
+            rel: 0
+          },
+          events: {
+            'onReady': onPlayerReady
+          }
+        }
+      );
+    }
+    function onPlayerReady(e) {
+      e.target.setVolume(100);
+    }
+  </script>
+  <script src="bundle.js" defer></script>
+</head>
+<body>
+  <div class="bg" id="js-bg">
+    <div id="js-ytplayer"></div>
+  </div>
+  <main class="main">
+    <h1 class="main_ttl">Get Wild 退勤</h1>
+    <p class="main_subTtl">You should go home early.</p>
+    <div class="main_innerWrap">
+      <div class="main_inner">
+        <p class="main_currentTime" id="js-currentTime">00:00:00</p>
+        <input type="time" step="900" value="18:30" class="main_inputTime" id="js-inputTime">
+      </div>
+    </div>
+  </main>
+</body>
+</html>
