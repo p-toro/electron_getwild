@@ -10,14 +10,20 @@ export class UpdateCurrentTime {
   private domYt: HTMLIFrameElement = document.querySelector('#js-ytplayer')
   private domYt2 = this.domYt
   private domBg = document.querySelector('#js-bg')
+  private domInputTime: HTMLInputElement = document.querySelector('#js-inputTime')
 
   constructor() {
     this.setCurrentTime()
+    this.setleavingOfficeTime()
     this.judgeTime()
   }
 
   setCurrentTime() {
     this.domCrrentTime.textContent = this.currentTime
+  }
+
+  setleavingOfficeTime() {
+    leavingOfficeTime = this.domInputTime.value + ':00'
   }
 
   judgeTime() {
@@ -39,7 +45,7 @@ export class UpdateCurrentTime {
   }
 }
 
-export class SetLeavingOfficeTime {
+export class ChangeLeavingOfficeTime {
   private inputTime = document.querySelector('#js-inputTime')
   constructor() {
     this.setEvent()

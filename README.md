@@ -3,6 +3,7 @@ Get wild leave-of-work app made with Electron.
 
 ## Usage
 ```bash
+yarn
 yarn dev
 yarn build-mac
 ```
